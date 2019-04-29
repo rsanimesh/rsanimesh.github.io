@@ -8,11 +8,16 @@ function toggleFunction() {
     }
 }
 
-function openPage(pageName) {
+function openPage(pageName, toggeBool) {
   var i;
   var x = document.getElementsByClassName("pages");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
   document.getElementById(pageName).style.display = "block";
+
+  if(toggeBool)
+  {
+      toggleFunction()
+  }
 }
