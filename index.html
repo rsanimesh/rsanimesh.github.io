@@ -9,8 +9,7 @@
 <body>
 
 <!--start navigation bar-->
-<!--<div w3-include-html="./html/navbar.html"></div>-->
-<script type="import" src="./html/navbar.html"></script>
+<div id="mynavbar"></div>
 <!--end navigation bar-->
 
 <div class="w3-container">
@@ -27,6 +26,14 @@
 </div>
 
 </body>
+
 <!--js-->
+<script src="./js/jquery.js"></script>
 <script src="./js/w3.js"></script>
 <script src="./js/myjs.js"></script>
+
+<script>
+    $(function(){
+      $("#mynavbar").load("./html/navbar.html");
+    });
+</script>
