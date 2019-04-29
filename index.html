@@ -6,9 +6,9 @@
 <!--start navigation bar-->
 <div id="mynavbar"></div>
 <!--end navigation bar-->
-<div>
-<h1>Portfolio</h1>
-</div>
+<div id="portfolio" class="pages"></div>
+<div id="projects" class="pages" style="display: None"></div>
+<div id="blog" class="pages" style="display: None"></div>
 </body>
 <!--js-->
 <script src="./js/jquery.js"></script>
@@ -18,6 +18,9 @@
     $(function(){
         $("#myheader").load("./html/header.html");
         $("#mynavbar").load("./html/navbar.html");
+        $("#portfolio").load("./html/portfolio.html");
+        $("#projects").load("./html/projects.html");
+        $("#blog").load("./html/blog.html");
     });
 </script>
 
