@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<!--    <div w3-include-html="./html/header.html"></div>-->
-    <script type="import" src="./html/header.html"></script>
+<head id="myheader">
 </head>
 
 
 <body>
-
 <!--start navigation bar-->
 <div id="mynavbar"></div>
 <!--end navigation bar-->
@@ -34,6 +31,7 @@
 
 <script>
     $(function(){
-      $("#mynavbar").load("./html/navbar.html");
+        $("#myheader").load("./html/header.html");
+        $("#mynavbar").load("./html/navbar.html");
     });
 </script>
