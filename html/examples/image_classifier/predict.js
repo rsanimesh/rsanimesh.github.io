@@ -62,7 +62,7 @@ function preprocessImage(image, modelName){
         .reverse(2)
         .expandDims();
     }
-    else if(modelName === "MobileNet"){
+    else if(modelName === "MOBILENET"){
         let offset = tf.scalar(127.5);
         return tensor.sub(offset)
         .div(offset)
