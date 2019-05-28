@@ -17,7 +17,7 @@ let model;
 async function loadModel(name){
     $("#progressbar").show();
     model = undefined;
-    model = await tf.loadLayersModel(`./${name}/model.json`);
+    model = await tf.loadLayersModel(`./html/examples/image_classifier/${name}/model.json`);
     $("#progressbar").hide();
 }
 
