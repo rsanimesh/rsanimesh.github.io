@@ -1,2 +1,2 @@
 # rsanimesh.github.io
-Rahul's portfolio @ rahulkrsinha.github.io
+Rahul Kumar Sinha portfolio @ rahulkrsinha.github.io
