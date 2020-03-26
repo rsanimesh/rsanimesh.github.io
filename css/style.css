@@ -378,7 +378,7 @@ ol {
   position: fixed; /* Make it stick/fixed */
   bottom: -100px; /* Stay on top */
   width: 100%; /* Full width */
-  transition: bottom 0.3s; /* Transition effect when sliding down (and up) */
+  transition: bottom 0.6s; /* Transition effect when sliding down (and up) */
   z-index: 10;
   box-shadow: 0 -4px 4px 0 rgba(0, 0, 0, 0.3);
 }
