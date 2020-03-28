@@ -24,9 +24,19 @@
         "sizes": "144x144"
       },
       {
+        "src": "/img/icon/icon-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
         "src": "/img/icon/icon-256x256.ico",
         "type": "image/ico",
         "sizes": "256x256"
+      },
+      {
+        "src": "/img/icon/icon-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
       }
     ]
   }
