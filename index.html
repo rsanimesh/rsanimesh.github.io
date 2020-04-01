@@ -59,7 +59,7 @@
                             <div class="col-lg-12">
 
                                 <h4>INDIA COVID-19 TRACKER</h4>
-                                <p>Visualizing the spread of the coronavirus outbreak in India over period of time. Data Scourced from <a href="https://www.covid19india.org/" target="_blank">covid19india.org</a></span>
+                                <p>Visualizing the spread of the coronavirus outbreak in India over period of time. Data Scourced from <a href="https://www.mohfw.gov.in/" target="_blank">Ministry of Health and Family Welfare</a></span>
 
                             </div>
 
@@ -72,8 +72,8 @@
                                 <p>Total Recovered Patients: <span style="color: green;" id="recovered"></span></p>
                                 <p>Total Deceased Patients: <span id="deceased"></span></p>
                                 <br>
-                                <p>New Patients in last one day: <span style="color: blue;" id="today"></span></p>
-                                <p>New Patients in last one week: <span style="color: blue;" id="this-week"></span></p>
+                                <p>Newly Identified Patients in last one day: <span style="color: blue;" id="today"></span></p>
+                                <p>Newly Identified Patients in last five days: <span style="color: blue;" id="last5days"></span></p>
                                 <br>
                                 <p>Patients Count in last 15 days</p>
                                 <div id="cumulative_chart"></div>
@@ -143,7 +143,7 @@
         $("#recovered").html(data["recovered"]);
         $("#deceased").html(data["deceased"]);
         $("#today").html(data["today"]);
-        $("#this-week").html(data["this-week"]);
+        $("#last5days").html(data["last5days"]);
 
         var new_patients = data['new_patients'];
         var total_patients = data['total_patients'];
@@ -159,7 +159,7 @@
             name: "total cases",
             type: 'scatter',
             marker: {
-                color: 'blue'
+                color: '#0B3398'
             }
         };
 
@@ -171,21 +171,38 @@
             orientation: 'h',
             text: new_patients.map(String),
             textposition: 'auto',
+            hoverinfo: 'none',
             marker: {
-                color: 'blue'
+                color: '#0B3398'
             }
         };
 
         var layout_cummulative = {
             yaxis: {
                 title: 'Total Number of Patients'
-            }
+            },
+            autosize: true,
+            margin: {
+                l: 50,
+                r: 10,
+                b: 100,
+                t: 50,
+                pad: 4
+            },
         }
 
         var layout_new_cases = {
             xaxis: {
                 title: 'Count of New Identified Patients'
-            }
+            },
+            autosize: true,
+            margin: {
+                l: 50,
+                r: 10,
+                b: 60,
+                t: 50,
+                pad: 4
+            },
         }
 
         Plotly.newPlot('cumulative_chart', [cummulative_cases], layout_cummulative);
