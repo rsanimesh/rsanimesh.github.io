@@ -1,12 +1,1 @@
-{
-    "date-time": "1st April, 19:52 IST",
-    "confirmed": 171,
-    "active": 17,
-    "recovered": 5,
-    "deceased": 2,
-    "today": 5,
-    "this-week": 4,
-    "new_patients": [59, 76, 69, 102, 66, 86, 78, 151, 143, 110, 208, 272, 107],
-    "total_patients": [258, 334, 403, 505, 571, 657, 735, 886, 1029, 1139, 1347, 1619, 1726],
-    "days": ["20, Mar", "21, Mar", "22, Mar", "23, Mar", "24, Mar", "25, Mar", "26, Mar", "27, Mar", "28, Mar", "29, Mar", "30, Mar", "31, Mar", "01, Apr"]
-}
+{"date-time": "01,Apr 15:42 IST", "confirmed": 1974, "active": 1886, "recovered": 65, "deceased": 22, "today": 339, "last5days": 1088, "new_patients": [25, 28, 59, 76, 69, 102, 66, 86, 78, 151, 143, 110, 208, 288, 339], "total_patients": [171, 199, 258, 334, 403, 505, 571, 657, 735, 886, 1029, 1139, 1347, 1635, 1974], "days": ["18, Mar", "19, Mar", "20, Mar", "21, Mar", "22, Mar", "23, Mar", "24, Mar", "25, Mar", "26, Mar", "27, Mar", "28, Mar", "29, Mar", "30, Mar", "31, Mar", "01, Apr"]}
