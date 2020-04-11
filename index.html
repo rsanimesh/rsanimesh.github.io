@@ -22,6 +22,26 @@
     <link rel="stylesheet" href="css/style.css" />
 
 </head>
+<style>
+    .flex-container {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .flex-item {
+        text-align: center;
+        font-size: x-large;
+    }
+    
+    @media only screen and (max-width: 767px) {
+        .flex-item {
+            font-size: small;
+        }
+        .flex-item span {
+            font-size: large;
+        }
+    }
+</style>
 
 <body class="project-detail">
 
@@ -60,26 +80,52 @@
 
                                 <h4>INDIA COVID-19 TRACKER</h4>
                                 <p>Visualizing the spread of the coronavirus outbreak in India over period of time. Data Scourced from <a href="https://www.mohfw.gov.in/" target="_blank">Ministry of Health and Family Welfare</a></span>
+                                    <h6>
+                                        <a href="tel:+911123978046">Helpline Number : +91-11-23978046</a> or
+                                        <a href="tel:1075">Toll Free : 1075</a> or
+                                        <a href="mailto:ncov2019@gov.in">Helpline Email ID : ncov2019@gov.in</a>
 
+                                    </h6>
                             </div>
 
                             <div class="col-lg-12">
                                 <br>
                                 <h6>Report as on <span id="date-time"></span></h6>
                                 <hr>
-                                <p>Total Confimed Patients: <span style="color: red;" id="confirmed"></span></p>
-                                <p>Total Active Patients: <span style="color: blue;" id="active"></span></p>
-                                <p>Total Recovered Patients: <span style="color: green;" id="recovered"></span></p>
-                                <p>Total Deceased Patients: <span id="deceased"></span></p>
+                                <div class="flex-container" style="color: red;">
+                                    <div class="flex-item">
+                                        <span id="confirmed"></span>
+                                        <br>Confimed
+                                    </div>
+                                    <div class="flex-item" style="color: blue;">
+                                        <span id="active"></span>
+                                        <br>Active
+                                    </div>
+                                    <div class="flex-item" style="color: green;">
+                                        <span id="recovered"></span>
+                                        <br>Recovered
+                                    </div>
+                                    <div class="flex-item" style="color: grey;">
+                                        <span id="deceased"></span>
+                                        <br>Deceased
+                                    </div>
+                                    <div class="flex-item" style="color: green;">
+                                        <span>1</span>
+                                        <br>Migrated
+                                    </div>
+                                </div>
+                                <hr>
                                 <br>
                                 <p>Newly Identified Patients in last one day: <span style="color: blue;" id="today"></span></p>
-                                <p>Newly Identified Patients in last five days: <span style="color: blue;" id="last5days"></span></p>
+                                <p>Newly Identified Patients in last seven days: <span style="color: blue;" id="last7days"></span></p>
+                                <p>Rate at which Patients are increasing: <span style="color: blue;" id="patientRate"></span> per day</p>
                                 <br>
                                 <p>Patients Count in last 15 days</p>
                                 <div id="cumulative_chart"></div>
                                 <br>
                                 <p>Number of New Identified Patients in last 15 days</p>
                                 <div id="new_chart"></div>
+
                             </div>
                         </div>
                     </div>
@@ -88,6 +134,30 @@
         </div>
     </section>
     <!-- Hero section end -->
+
+
+    <!-- Extra section start -->
+    <section class="extra-section spad pb-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-8 offset-xl-2">
+                    <div class="section-title">
+                        <h2>Statewise Status</h2>
+                        <br>
+                        <a href="https://www.mohfw.gov.in/pdf/coronvavirushelplinenumber.pdf" target="_blank">State Helpline Numbers</a>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 pt-5">
+                            <select class="state custom-select"></select>
+                            <hr>
+                            <div id="state_chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Extra section end -->
 
     <!-- Social links section start -->
     <div class="social-section">
@@ -133,82 +203,7 @@
 
     <!-- Load plotly.js into the DOM -->
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script src="js/charts.js"></script>
 </body>
-<script>
-    $.getJSON("covid19india.json", function(data) {
-
-        $("#date-time").html(data["date-time"]);
-        $("#confirmed").html(data["confirmed"]);
-        $("#active").html(data["active"]);
-        $("#recovered").html(data["recovered"]);
-        $("#deceased").html(data["deceased"]);
-        $("#today").html(data["today"]);
-        $("#last5days").html(data["last5days"]);
-
-        var new_patients = data['new_patients'];
-        var total_patients = data['total_patients'];
-        var days = data['days'];
-
-
-
-
-
-        var cummulative_cases = {
-            x: days,
-            y: total_patients,
-            name: "total cases",
-            type: 'scatter',
-            marker: {
-                color: '#0B3398'
-            }
-        };
-
-        var new_cases = {
-            y: days,
-            x: new_patients,
-            name: "new cases",
-            type: 'bar',
-            orientation: 'h',
-            text: new_patients.map(String),
-            textposition: 'auto',
-            hoverinfo: 'none',
-            marker: {
-                color: '#0B3398'
-            }
-        };
-
-        var layout_cummulative = {
-            yaxis: {
-                title: 'Total Number of Patients'
-            },
-            autosize: true,
-            margin: {
-                l: 50,
-                r: 10,
-                b: 100,
-                t: 50,
-                pad: 4
-            },
-        }
-
-        var layout_new_cases = {
-            xaxis: {
-                title: 'Count of New Identified Patients'
-            },
-            autosize: true,
-            margin: {
-                l: 50,
-                r: 10,
-                b: 60,
-                t: 50,
-                pad: 4
-            },
-        }
-
-        Plotly.newPlot('cumulative_chart', [cummulative_cases], layout_cummulative);
-        Plotly.newPlot('new_chart', [new_cases], layout_new_cases);
-
-    });
-</script>
 
 </html>
