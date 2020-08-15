@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Rahul Sinha</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web Profile of Rahul Sinha, who is a Data Scientist at Reliance Industries Limited also worked for Tech Mahindra in past.">
+    <meta name="keywords" content="cv, resume, rahul, rahul sinha, rahul kumar sinha, data scientist, onepage, navi mumbai, pune, reliance, tech mahindra, creative, html">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="shortcut icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/flaticon.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+</head>
+<style>
+    .flex-container {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .flex-item {
+        text-align: center;
+        font-size: x-large;
+    }
+    
+    @media only screen and (max-width: 767px) {
+        .flex-item {
+            font-size: small;
+        }
+        .flex-item span {
+            font-size: large;
+        }
+    }
+</style>
+
+<body class="project-detail">
+
+    <!-- Header section start -->
+    <header class="header-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="site-logo">
+                        <h2><a href="#">Rahul Sinha</a></h2>
+                        <p>Data Scientist @ Reliance in Mumbai</p>
+                    </div>
+                </div>
+                <div class="col-md-8 text-md-right header-buttons">
+                    <!-- <a href="#" class="site-btn">Download Resume</a> -->
+                    <a href="/aboutme.html" class="site-btn">About me</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header section end -->
+
+    <!-- Hero section start -->
+    <section class="hero-section bottom-padding">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p>Project</p>
+                        </div>
+                    </div>
+                    <div class="hero-text">
+                        <div class="row">
+                            <div class="col-lg-12">
+
+                                <h4>INDIA COVID-19 TRACKER</h4>
+                                <p>Visualizing the spread of the coronavirus outbreak in India over period of time. Data Scourced from <a href="https://www.mohfw.gov.in/" target="_blank">Ministry of Health and Family Welfare</a></span>
+                                    <h6>
+                                        <a href="tel:+911123978046">Helpline Number : +91-11-23978046</a> or
+                                        <a href="tel:1075">Toll Free : 1075</a> or
+                                        <a href="mailto:ncov2019@gov.in">Helpline Email ID : ncov2019@gov.in</a>
+
+                                    </h6>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <br>
+                                <h6>Report as on <span id="date-time"></span></h6>
+                                <hr>
+                                <div class="flex-container" style="color: red;">
+                                    <div class="flex-item">
+                                        <span id="confirmed"></span>
+                                        <br>Confimed
+                                    </div>
+                                    <div class="flex-item" style="color: blue;">
+                                        <span id="active"></span>
+                                        <br>Active
+                                    </div>
+                                    <div class="flex-item" style="color: green;">
+                                        <span id="recovered"></span>
+                                        <br>Recovered
+                                    </div>
+                                    <div class="flex-item" style="color: grey;">
+                                        <span id="deceased"></span>
+                                        <br>Deceased
+                                    </div>
+                                    <div class="flex-item" style="color: green;">
+                                        <span>1</span>
+                                        <br>Migrated
+                                    </div>
+                                </div>
+                                <hr>
+                                <br>
+                                <p>Newly Identified Patients in last one day: <span style="color: blue;" id="today"></span></p>
+                                <p>Newly Identified Patients in last seven days: <span style="color: blue;" id="last7days"></span></p>
+                                <p>Rate at which Patients are increasing: <span style="color: blue;" id="patientRate"></span> per day</p>
+                                <br>
+                                <p>Patients Count in last 15 days</p>
+                                <div id="cumulative_chart"></div>
+                                <br>
+                                <p>Number of New Identified Patients in last 15 days</p>
+                                <div id="new_chart"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero section end -->
+
+
+    <!-- Extra section start -->
+    <section class="extra-section spad pb-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-8 offset-xl-2">
+                    <div class="section-title">
+                        <h2>Statewise Status</h2>
+                        <br>
+                        <a href="https://www.mohfw.gov.in/pdf/coronvavirushelplinenumber.pdf" target="_blank">State Helpline Numbers</a>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 pt-5">
+                            <select class="state custom-select"></select>
+                            <hr>
+                            <div id="state_chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Extra section end -->
+
+    <!-- Social links section start -->
+    <div class="social-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="social-link-warp">
+                        <div class="social-links">
+                            <a href="https://github.com/rsanimesh" target="_blank" title="My Github Profile"><i class="fa fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/rahulkrsinha/" target="_blank" title="My LinkedIn Profile"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/rsanimesh/" target="_blank" title="My Instagram Profile"><i class="fa fa-instagram"></i></a>
+                            <a href="https://twitter.com/rsanimesh" target="_blank" title="My Twitter Profile"><i class="fa fa-twitter" target="_blank"></i></a>
+                            <a href="mailto:rahul.107040@gmail.com" target="_blank" title="E-Mail me at rahul.107040@gmail.com"><i class="fa fa-envelope"></i></a>
+                        </div>
+                        <h2 class="hidden-md hidden-sm">My Social Profiles</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Social links section end -->
+
+
+    <!-- Footer section start -->
+    <footer class="footer-section">
+        <div class="container text-center">
+            <div class="copyright">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>
+                    document.write(new Date().getFullYear());
+                </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </div>
+        </div>
+    </footer>
+    <!-- Footer section end -->
+
+
+    <!--====== Javascripts & Jquery ======-->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Load plotly.js into the DOM -->
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script src="js/charts.js"></script>
+</body>
+
+</html>
