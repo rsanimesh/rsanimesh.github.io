@@ -808,6 +808,12 @@ ol {
     display: none;
 }
 
+.family-tree-img {
+    margin-left: 25vh;
+    height: 70vh;
+    width: 160vh;
+}
+
 
 /* ===========================
   Responsive
@@ -883,6 +889,16 @@ ol {
     .hero-info ul li span {
         display: block;
     }
+    .family-tree-img {
+        /* height: 70vh; */
+        margin-left: 0px;
+    }
+    .family-tree-div {
+        width: 100vh;
+        height: 100vh;
+        overflow-x: scroll;
+        position: absolute;
+    }
 }
 
 
@@ -938,6 +954,16 @@ ol {
     .skills-text {
         font-size: 20px;
     }
+    .family-tree-img {
+        /* height: 70vh; */
+        margin-left: 0px;
+    }
+    .family-tree-div {
+        width: 100vh;
+        height: 100vh;
+        overflow-x: scroll;
+        position: absolute;
+    }
 }
 
 
@@ -964,5 +990,15 @@ ol {
     }
     .skills-text {
         font-size: 20px;
+    }
+    .family-tree-img {
+        /* height: 70vh; */
+        margin-left: 0px;
+    }
+    .family-tree-div {
+        width: 100vh;
+        height: 100vh;
+        overflow-x: scroll;
+        position: absolute;
     }
 }
