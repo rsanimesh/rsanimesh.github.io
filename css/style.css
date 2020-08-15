@@ -797,6 +797,17 @@ ol {
     color: #fff;
 }
 
+.rs-side-floating-menu {
+    background-color: #f9f9f9;
+    height: 40vh;
+    width: 25vh;
+    position: absolute;
+    top: 15vh;
+    right: 2vh;
+    z-index: 1;
+    display: none;
+}
+
 
 /* ===========================
   Responsive

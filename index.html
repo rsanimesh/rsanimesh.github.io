@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/flaticon.css" />
     <link rel="stylesheet" href="css/owl.carousel.css" />
     <!--	<link rel="stylesheet" href="css/magnific-popup.css"/>-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css" />
 
     <link rel="manifest" href="/manifest.json">
@@ -28,18 +29,23 @@
     <link rel="apple-touch-icon" href="/img/icon/icon-96x96.png">
     <meta name="apple-mobile-web-app-status-bar" content="#f2960b">
 
-
-    <!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
 </head>
 
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
+    </div>
+
+    <!-- Side bar start  -->
+    <div class="rs-side-floating-menu w3-card-4" id="id01">
+        <span class="w3-btn w3-right" onclick="document.getElementById('id01').style.display='none'">X</span>
+        <button class="w3-btn w3-block w3-left-align w3-ripple w3-hover-orange" onclick="document.getElementById('modal01').style.display='block'"> > My Family Tree</button>
+    </div>
+    <!-- Side bar end  -->
+
+    <div id="modal01" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+        <img class="w3-modal-content" src="img/family_tree_father.jpg" style="margin-left: 25vh;height: 70vh;width: 160vh;">
     </div>
 
     <!--	Navigation section start -->
@@ -58,10 +64,11 @@
                         <!--						<p>Enhance your online presence</p>-->
                     </div>
                 </div>
-                <!-- <div class="col-md-8 text-md-right header-buttons">
-                    <a href="/index.html" class="site-btn">Home</a>
-                    					<a href="#" class="site-btn">Discover me</a>
-                </div> -->
+                <div class="col-md-8 text-md-right header-buttons">
+                    <!-- <a href="/index.html" class="site-btn">Home</a>
+                                        <a href="#" class="site-btn">Discover me</a> -->
+                    <button class="w3-button w3-xxlarge" onclick="document.getElementById('id01').style.display='block'">&#9776;</button>
+                </div>
             </div>
         </div>
     </header>
